@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "deque": "cpp",
+        "vector": "cpp",
+        "array": "cpp",
+        "list": "cpp",
+        "typeinfo": "cpp",
+        "geometry": "cpp",
+        "complex": "cpp"
+    }
+}

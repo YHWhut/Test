@@ -1,0 +1,9 @@
+<launch>
+    <param name="linear_Kp" type="double" value="0.25" />
+    <param name="linear_Ki" type="double" value="0.0" />
+    <param name="linear_Kd" type="double" value="0.0" />
+    <param name="angular_Kp" type="double" value="-0.3" />
+    <param name="angular_Ki" type="double" value="0.0" />
+    <param name="angular_Kd" type="double" value="0.05" />
+    <node pkg="gazebo_rviz_1" type="cmd_vel_publish" name="cmd_vel_publish" output="screen" />
+</launch>

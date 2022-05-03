@@ -1,0 +1,18 @@
+<launch>
+    <param name="robot_description" command="$(find xacro)/xacro $(find gazebo_rviz_1)/urdf/car.urdf.xacro" />
+    <!-- <node pkg="rviz" type="rviz" name="rviz" /> -->
+    <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find gazebo_rviz_1)/rviz/robot_in_rviz.rviz" /> -->
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" output="screen" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" />
+    <!-- <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" output="screen" /> -->
+    
+    <node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen">
+        <rosparam file="$(find gazebo_rviz_1)/param/contral.yaml" command="load" />
+        <param name="sim" value="flase" />
+    </node>
+
+    <node name="odom_in_map" pkg="gazebo_rviz_1" type="odom_in_map" output="screen" />
+
+    <!-- <include file="$(find gazebo_rviz_1)/launch/amcl.launch" /> -->
+
+</launch>

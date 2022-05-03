@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="data_generator" type="data_generator" name="data_generator" output="screen"/>
+    <!-- <node pkg="rviz" type="rviz" name="rviz" /> -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find data_generator)/config/data_generator.rviz" />
+
+</launch>
